@@ -1,0 +1,19 @@
+server:
+  port: 8761
+
+eureka:
+  instance:
+#  主机名字
+    hostname: localhost
+  client:
+  #自身不注册
+    registerWithEureka: false
+    #不发现服务
+    fetchRegistry: false
+    serviceUrl:
+    #访问地址，高可用，支持集群，多个之间,隔开
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+spring:
+  application:
+  #服务名称
+    name: servier1803
